@@ -45,10 +45,10 @@ int main()
     {
 
         int option;
-        printf("\033[H\033[J");//clear screen
         stack1.print_stack();
         cout<<"Choose :\n1.Add\n2.Pop"<<endl;
         cin>>option;
+        cout << "\033[H\033[J";//clear screen
         switch(option)
         {
             case 1:
@@ -93,7 +93,7 @@ void stack<T,N>::print_stack()const
 template<typename T,int N>
 bool stack<T,N>::push(T value)
 {
-    if(top == -1)
+    if(top == 0)
         return false;
 
     array[--top] = value;
